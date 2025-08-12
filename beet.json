@@ -1,1 +1,24 @@
-{"author":"OceanhavenBlue","data_pack":{"load":["src"]},"description":"Additional minecart mechanics","meta":{"bolt":{"entrypoint":["transporters:main"]}},"name":"Transporters","output":"build","pipeline":["mecha"],"require":["bolt"]}
+{
+  "author": "OceanhavenBlue",
+  "data_pack": {
+    "load": [
+      "src"
+    ]
+  },
+  "description": "Additional minecart mechanics",
+  "meta": {
+    "bolt": {
+      "entrypoint": [
+        "transporters:main"
+      ]
+    }
+  },
+  "name": "Transporters",
+  "output": "build",
+  "pipeline": [
+    "mecha"
+  ],
+  "require": [
+    "bolt"
+  ]
+}
