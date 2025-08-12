@@ -1,0 +1,3 @@
+data merge entity @s {Marker: 1b}
+execute at @s run summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags: ["cartpointer"], Passengers: [{id: "minecraft:block_display", block_state: {Name: "minecraft:hopper", Properties: {}}, transformation: [0.5000f, 0.0000f, 0.0000f, 0.2500f, 0.0000f, 0.0000f, -0.0625f, 0.5000f, 0.0000f, 0.5000f, 0.0000f, 0.2500f, 0.0000f, 0.0000f, 0.0000f, 1.0000f], Tags: ["cartpointer"]}]}
+kill @s

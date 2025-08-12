@@ -1,0 +1,10 @@
+append function_tag minecraft:tick {
+"values":[
+"transporters:tick"
+]
+}
+append function_tag minecraft:load {
+"values":[
+"transporters:load"
+]
+}
