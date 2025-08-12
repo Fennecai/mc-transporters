@@ -1,0 +1,28 @@
+# Python virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Bolt/Beet build artifacts
+.cache/
+bolt-out/
+build/
+dist/
+*.bolt-lock
+.beet_cache/
+
+# Minecraft datapack compiled/generated content
+*.zip
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE files
+.vscode/
+*.swp
