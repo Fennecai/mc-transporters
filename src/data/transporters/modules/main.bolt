@@ -8,3 +8,13 @@ append function_tag minecraft:load {
 "transporters:load"
 ]
 }
+append entity_type_tag  minecraft:carts {
+    "values":[
+        "minecraft:minecart",
+        "minecraft:hopper_minecart",
+        "minecraft:tnt_minecart",
+        "minecraft:chest_minecart",
+        "minecraft:command_block_minecart",
+        "minecraft:spawner_minecart"
+    ]
+}

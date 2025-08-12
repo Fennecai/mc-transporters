@@ -3,7 +3,8 @@
   "data_pack": {
     "load": [
       "src"
-    ]
+    ],
+    "pack_format": 81
   },
   "description": "Additional minecart mechanics",
   "meta": {
