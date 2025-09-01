@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:block_based",
+  "environment": "minecraft:default",
+  "structure": "transporters:lime_red_test",
+  "max_ticks": 300,
+  "setup_ticks": 20,
+  "required": true,
+  "rotation": "none",
+  "sky_access": false
+}
