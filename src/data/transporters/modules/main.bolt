@@ -1,14 +1,14 @@
 append function_tag minecraft:tick {
 "values":[
 "transporters:tick"
-]
+    ]
 }
 append function_tag minecraft:load {
 "values":[
 "transporters:load"
-]
+    ]
 }
-append entity_type_tag  minecraft:carts {
+append entity_type_tag  transporters:carts {
     "values":[
         "minecraft:minecart",
         "minecraft:hopper_minecart",
@@ -16,5 +16,38 @@ append entity_type_tag  minecraft:carts {
         "minecraft:chest_minecart",
         "minecraft:command_block_minecart",
         "minecraft:spawner_minecart"
+    ]
+}
+
+append block_tag transporters:stop_if_present {
+
+    "values":[
+        "minecraft:red_wool"
+    ]
+}
+
+
+append block_tag transporters:start_if_present {
+    "values":[
+        "minecraft:lime_wool"
+    ]
+}
+
+
+append block_tag transporters:fly_if_present {
+    "values":[
+        "minecraft:purple_wool"
+    ]
+}
+
+append block_tag transporters:mount_ents_if_present {
+    "values":[
+        "minecraft:pink_wool"
+    ]
+}
+
+append block_tag transporters:mount_players_if_present {
+    "values":[
+        "minecraft:magenta_wool"
     ]
 }
