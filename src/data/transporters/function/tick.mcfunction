@@ -25,7 +25,7 @@ execute as @e[type=#minecraft:carts] at @s:
     if block ~ ~-1 ~ lime_wool run tag @s add transporter
 
 #"Pointer" armor stands that indicate a cart's front direction
-execute at @e[type=#minecraft:carts] as @e[type=minecraft:armor_stand,name="pointer",distance=0..4]:
+execute at @e[type=#minecraft:carts] as @e[type=minecraft:armor_stand,name="pointer",distance=0..2]:
     tp @s ^-0.5 ^ ^ ~ ~
     data merge entity @s {Marker: 1b}
     execute at @s run summon block_display ~-0.5 ~-0.5 ~-0.5 {Tags: ["cartpointer"], Passengers: [{id: "minecraft:block_display", block_state: {Name: "minecraft:hopper", Properties: {}}, transformation: [0.5000f, 0.0000f, 0.0000f, 0.2500f, 0.0000f, 0.0000f, -0.0625f, 0.5000f, 0.0000f, 0.5000f, 0.0000f, 0.2500f, 0.0000f, 0.0000f, 0.0000f, 1.0000f], Tags: ["cartpointer"]}]}
