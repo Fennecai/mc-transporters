@@ -20,9 +20,14 @@ append entity_type_tag  transporters:carts {
 }
 
 append block_tag transporters:stop_if_present {
-
     "values":[
         "minecraft:red_wool"
+    ]
+}
+
+append block_tag transporters:destroy_if_present {
+    "values":[
+        "minecraft:orange_wool"
     ]
 }
 

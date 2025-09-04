@@ -49,3 +49,7 @@ execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:mou
 
 #magenta wool does the same as pink wool, but only for players
 execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:mount_players_if_present run ride @e[type=player,limit=1,distance=..2,sort=nearest] mount @s
+
+#orange wool destroys carts
+execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:destroy_if_present run kill @s
+
