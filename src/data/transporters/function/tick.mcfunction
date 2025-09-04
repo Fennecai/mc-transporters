@@ -1,22 +1,30 @@
+#python-ish function to power carts forward depending on direction
+def powercartsforward():
+    if entity @s[y_rotation=0] run data merge entity @s {Motion: [-2.054d, 0.0d, 0.0d]}
+    #45
+    if entity @s[y_rotation=44..46] run data merge entity @s {Motion: [-2.054d, 0.0d, -2.054d]}
+    #90
+    if entity @s[y_rotation=90] run data merge entity @s {Motion: [0.0d, 0.0d, -2.054d]}
+    #135
+    if entity @s[y_rotation=134..136] run data merge entity @s {Motion: [2.054d, 0.0d, -2.054d]}
+    #180
+    if entity @s[y_rotation=180] run data merge entity @s {Motion: [2.054d, 0.0d, 0.0d]}
+    #225
+    if entity @s[y_rotation=224..226] run data merge entity @s {Motion: [2.054d, 0.0d, 2.054d]}
+    #270
+    if entity @s[y_rotation=270] run data merge entity @s {Motion: [0.0d, 0.0d, 2.054d]}
+    #315
+    if entity @s[y_rotation=314..316] run data merge entity @s {Motion: [-2.054d, 0.0d, 2.054d]}
+
+
+
+
+
 
 # power the carts based on direction (comments are the rotation in degrees)
 #0
 execute as @e[type=#transporters:carts,tag=transporter]:
-    if entity @s[y_rotation=0] run data merge entity @s {Motion: [-2.054d, 0.0d, 0.0d]}
-#45
-    if entity @s[y_rotation=44..46] run data merge entity @s {Motion: [-2.054d, 0.0d, -2.054d]}
-#90
-    if entity @s[y_rotation=90] run data merge entity @s {Motion: [0.0d, 0.0d, -2.054d]}
-#135
-    if entity @s[y_rotation=134..136] run data merge entity @s {Motion: [2.054d, 0.0d, -2.054d]}
-#180
-    if entity @s[y_rotation=180] run data merge entity @s {Motion: [2.054d, 0.0d, 0.0d]}
-#225
-    if entity @s[y_rotation=224..226] run data merge entity @s {Motion: [2.054d, 0.0d, 2.054d]}
-#270
-    if entity @s[y_rotation=270] run data merge entity @s {Motion: [0.0d, 0.0d, 2.054d]}
-#315
-    if entity @s[y_rotation=314..316] run data merge entity @s {Motion: [-2.054d, 0.0d, 2.054d]}
+    powercartsforward()
 
 # start / stop engine
 execute as @e[type=#transporters:carts] at @s:
@@ -53,3 +61,9 @@ execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:mou
 #orange wool destroys carts
 execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:destroy_if_present run kill @s
 
+#carts climb ladders
+execute as @e[type=#transporters:carts] at @s if block ~ ~ ~ #transporters:climb_if_present:
+    data merge entity @s {Motion: [0.0d, 0.25d, 0.0d]}
+execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:climb_if_present if block ~ ~ ~ #minecraft:air:
+    powercartsforward()
+    
