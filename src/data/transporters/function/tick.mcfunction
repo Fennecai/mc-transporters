@@ -1,5 +1,7 @@
 #python-ish function to power carts forward depending on direction
 def powercartsforward():
+    # power the carts based on direction (comments are the rotation in degrees)
+    #0
     if entity @s[y_rotation=0] run data merge entity @s {Motion: [-2.054d, 0.0d, 0.0d]}
     #45
     if entity @s[y_rotation=44..46] run data merge entity @s {Motion: [-2.054d, 0.0d, -2.054d]}
@@ -21,8 +23,7 @@ def powercartsforward():
 
 
 
-# power the carts based on direction (comments are the rotation in degrees)
-#0
+
 execute as @e[type=#transporters:carts,tag=transporter]:
     powercartsforward()
 
