@@ -18,12 +18,6 @@ def powercartsforward():
     #315
     if entity @s[y_rotation=314..316] run data merge entity @s {Motion: [-2.054d, 0.0d, 2.054d]}
 
-
-
-
-
-
-
 execute as @e[type=#transporters:carts,tag=transporter]:
     powercartsforward()
 
