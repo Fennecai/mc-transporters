@@ -4,7 +4,7 @@
     "load": [
       "src"
     ],
-    "pack_format": 81
+    "pack_format": 101
   },
   "description": "Additional minecart mechanics",
   "meta": {

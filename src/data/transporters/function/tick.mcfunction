@@ -56,9 +56,24 @@ execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:mou
 #orange wool destroys carts
 execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:destroy_if_present run kill @s
 
-#carts climb ladders
+#carts climb ladders and shelves
 execute as @e[type=#transporters:carts] at @s if block ~ ~ ~ #transporters:climb_if_present:
-    data merge entity @s {Motion: [0.0d, 0.25d, 0.0d]}
+    data merge entity @s {Motion: [0.0d, 0.50d, 0.0d]}
 execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:climb_if_present if block ~ ~ ~ #minecraft:air:
     powercartsforward()
-    
+
+#carts change direction when passing over a flat straight rail with magenta glazed terracotta underneath it, provided the arrow points in one of the valid directions
+execute as @e[type=#transporters:carts] at @s if block ~ ~ ~ minecraft:tripwire:
+    execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ minecraft:magenta_glazed_terracotta[facing=north]:
+        tp @s ~ ~ ~ -90 ~
+        data merge entity @s {rotation:[-90,0]}
+    execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ minecraft:magenta_glazed_terracotta[facing=south]:
+        tp @s ~ ~ ~ 90 ~
+        data merge entity @s {rotation:[180,0]}
+    execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ minecraft:magenta_glazed_terracotta[facing=east]:
+        tp @s ~ ~ ~ 0 ~
+        data merge entity @s {rotation:[0,0]}
+    execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ minecraft:magenta_glazed_terracotta[facing=west]:
+        tp @s ~ ~ ~ 180 ~
+        data merge entity @s {rotation:[180,0]}
+    powercartsforward()

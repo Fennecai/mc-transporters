@@ -21,7 +21,8 @@ append entity_type_tag  transporters:carts {
 
 append block_tag transporters:climb_if_present {
     "values":[
-        "minecraft:ladder"
+        "minecraft:ladder",
+        "#minecraft:wooden_shelves"
     ]
 }
 
