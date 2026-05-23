@@ -19,6 +19,39 @@ append entity_type_tag  transporters:carts {
     ]
 }
 
+append entity_type_tag transporters:animals {
+  "values": [
+    "minecraft:axolotl",
+    "minecraft:armadillo",
+    "minecraft:bat",
+    "minecraft:camel",
+    "minecraft:camel_husk",
+    "minecraft:cat",
+    "minecraft:chicken",
+    "minecraft:cow",
+    "minecraft:dolphin",
+    "minecraft:donkey",
+    "minecraft:fox",
+    "minecraft:frog",
+    "minecraft:goat",
+    "minecraft:horse",
+    "minecraft:llama",
+    "minecraft:mooshroom",
+    "minecraft:mule",
+    "minecraft:ocelot",
+    "minecraft:panda",
+    "minecraft:parrot",
+    "minecraft:pig",
+    "minecraft:polar_bear",
+    "minecraft:rabbit",
+    "minecraft:sheep",
+    "minecraft:sniffer",
+    "minecraft:trader_llama",
+    "minecraft:turtle",
+    "minecraft:wolf"
+  ]
+}
+
 append block_tag transporters:climb_if_present {
     "values":[
         "minecraft:ladder",

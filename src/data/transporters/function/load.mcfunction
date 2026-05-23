@@ -1,1 +1,2 @@
-# Currently nothing needs to happen upon datapack load. This file is kept for future potential for that to change.
+scoreboard objectives add detector_frame_score dummy
+scoreboard objectives add transporters_route dummy

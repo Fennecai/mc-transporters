@@ -20,6 +20,7 @@
     "mecha"
   ],
   "require": [
-    "bolt"
+    "bolt",
+    "bolt_selectors"
   ]
 }

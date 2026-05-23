@@ -8,5 +8,6 @@ dependencies = [
     "aegis>=1.1.1",
     "beet>=0.115.0",
     "bolt>=0.50.1",
+    "bolt-selectors>=0.4.0",
     "mecha>=0.103.0",
 ]
