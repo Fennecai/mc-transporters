@@ -1,6 +1,5 @@
 from nbtlib import Byte
 
-
 blockpositions = [("north","~ ~ ~-1"),("south","~ ~ ~1"),("east","~1 ~ ~"),("west","~-1 ~ ~")]
 
 
@@ -61,7 +60,11 @@ execute as @e[type=minecraft:block_display,tag=cartpointer] at @s:
 execute as @e[type=#transporters:carts] at @s:
     if block ~ ~-1 ~ #transporters:fly_if_present run tag @s add airship
     if block ~ ~-1 ~ #transporters:stop_if_present run tag @s remove airship
-execute as @e[tag=airship,type=#transporters:carts] at @s facing entity @e[type=minecraft:armor_stand,name="endpoint",limit=1,sort=nearest] feet run tp @s ^ ^0.1 ^0.3 facing entity @e[type=minecraft:armor_stand,name="endpoint",limit=1,sort=nearest]
+execute as @e[tag=airship,type=#transporters:carts] at @s:
+    if entity @e[type=minecraft:armor_stand,name="endpoint",distance=..7,sort=nearest,limit=1]:
+        facing entity @e[type=minecraft:armor_stand,name="endpoint",limit=1,sort=nearest] feet run tp @s ^ ^0.1 ^0.3 facing entity @e[type=minecraft:armor_stand,name="endpoint",limit=1,sort=nearest]
+    unless entity @e[type=minecraft:armor_stand,name="endpoint",distance=..7,sort=nearest,limit=1]:
+        facing entity @e[type=minecraft:armor_stand,name="endpoint",limit=1,sort=nearest] feet run tp @s ^ ^0.2 ^0.7 facing entity @e[type=minecraft:armor_stand,name="endpoint",limit=1,sort=nearest]
 # endpoint armor stands behavior
 execute as @e[type=minecraft:armor_stand,name="endpoint"] at @s run tag @e[tag=airship,type=#transporters:carts,distance=0.1..0.2] remove airship
 execute as @e[type=minecraft:armor_stand,name="endpoint"] run data merge entity @s {NoGravity: 1b}
@@ -82,7 +85,7 @@ execute as @e[type=#transporters:carts] at @s if block ~ ~ ~ #transporters:climb
 execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ #transporters:climb_if_present if block ~ ~ ~ #minecraft:air:
     powercartsforward()
 
-#carts change direction when passing over a tripwire with magenta glazed terracotta underneath it, provided the arrow points in one of the valid directions
+#carts change direction when passing over a tripwire with magenta glazed terracotta underneath it
 execute as @e[type=#transporters:carts] at @s if block ~ ~ ~ minecraft:tripwire:
     execute as @e[type=#transporters:carts] at @s if block ~ ~-1 ~ minecraft:magenta_glazed_terracotta[facing=north]:
         tp @s ~ ~ ~ -90 ~
